@@ -4,7 +4,7 @@ dockworker:
     name: Redis Instance for Library unbgeology Sites
     uri: https://unbgeology.redis.lib.unb.ca
     description: >
-      A Redis instance used by unbgeology sites hosted by the University of New Brunswick Libraries.
+      A Redis instance used by unbgeology.lib.unb.ca.
     topics:
       - redis
       - unbgeology
