@@ -1,0 +1,10 @@
+services:
+  unbgeology-redis-lib-unb-ca:
+    build:
+      context: .
+    env_file:
+      - ./env/redis.env
+    restart: unless-stopped
+    container_name: unbgeology-redis-lib-unb-ca
+    expose:
+      - "3306"

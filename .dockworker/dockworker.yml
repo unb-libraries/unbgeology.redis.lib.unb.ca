@@ -1,0 +1,52 @@
+dockworker:
+  version: '6'
+  application:
+    name: Redis Instance for Library unbgeology Sites
+    uri: https://unbgeology.redis.lib.unb.ca
+    description: >
+      A Redis instance used by unbgeology sites hosted by the University of New Brunswick Libraries.
+    topics:
+      - redis
+      - unbgeology
+    identifiers:
+      id: unbgeology.redis.lib.unb.ca
+      slug: unbgeology-redis-lib-unb-ca
+      short_slug: dredis
+      uuid: 3502
+    framework:
+      name: Redis
+      version: 7
+      startup_finished_marker: 'Ready to accept connections'
+      endpoint:
+        name: redis
+        port: 3306
+        readiness_timeout: 15
+    license:
+      license: MIT
+      holder: University of New Brunswick Libraries
+    shell:
+      path: /bin/sh
+  endpoints:
+    env:
+      - dev
+      - prod
+    deployments:
+      unbgeology-redis-lib-unb-ca:
+        default: true
+        managed: true
+        name: unbgeology-redis-lib-unb-ca
+  workflows:
+    vcs:
+      type: github
+      owner: unb-libraries
+      name: unbgeology.redis.lib.unb.ca
+    jira:
+      project_keys:
+        - IN
+    image:
+      name: ghcr.io/unb-libraries/unbgeology.redis.lib.unb.ca
+      parent: redis:7-alpine
+      repository: GitHub
+      push-branches:
+        - dev
+        - prod
