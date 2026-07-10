@@ -1,5 +1,4 @@
 FROM redis:7-alpine
-MAINTAINER UNB Libraries <libsupport@unb.ca>
 
 ENV REDIS_CONF_FILE /usr/local/etc/redis/redis.conf
 ENV REDIS_MAX_MEMORY 8000000000
@@ -22,4 +21,5 @@ LABEL ca.unb.lib.generator="redis" \
   org.label-schema.vcs-url="https://github.com/unb-libraries/unbgeology.redis.lib.unb.ca" \
   org.label-schema.vendor="University of New Brunswick Libraries" \
   org.label-schema.version=$VERSION \
+  org.opencontainers.image.authors="UNB Libraries <libsupport@unb.ca>" \
   org.opencontainers.image.source="https://github.com/unb-libraries/unbgeology.redis.lib.unb.ca"
